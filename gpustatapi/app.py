@@ -15,7 +15,7 @@ class MyServer(BaseHTTPRequestHandler):
 
 
 def main():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description='Simple API Wrapper for gpustat')
     parser.add_argument('-p', '--port', type=int, default=8111)
     args = parser.parse_args()
     hostName = "0.0.0.0"
