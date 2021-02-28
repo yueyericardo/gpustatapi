@@ -9,7 +9,7 @@ pip install gpustatapi
 
 ### 2. Usage
 ```bash
-gpustatapi
+gpustatapi &
 # or
 gpustatapi -p 8111 &
 ```
