@@ -1,6 +1,7 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 import gpustat
+import argparse
 
 
 class MyServer(BaseHTTPRequestHandler):
@@ -14,8 +15,11 @@ class MyServer(BaseHTTPRequestHandler):
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-p', '--port', type=int, default=8111)
+    args = parser.parse_args()
     hostName = "0.0.0.0"
-    serverPort = 8111
+    serverPort = args.port
     webServer = HTTPServer((hostName, serverPort), MyServer)
     print("Server started http://%s:%s" % (hostName, serverPort))
 
